@@ -1,9 +1,15 @@
+import platform
 import os
+
+def check_platfom():
+    if platform.system() == "Windows": os.system("cls")
+    else: os.system("clear")
 
 """First, we got to get the credits in a dictionary"""
 # Creating the dictionary for first semester with credits and subjects
 
-os.system("cls")
+check_platfom()
+
 totalCredits = 21
 
 choicesDict = dict()
@@ -48,7 +54,9 @@ for everySubject in subjectsAndCredits:
 
 GPA = (totalScore/totalCredits)
 
-os.system("cls")
+
+check_platfom()
+
 if GPA == 0 or GPA == 10:
     print("\nYou're kinda the one that companies don't wanna recruit.")
     print("Anyway, here's your GPA: {}".format(GPA))
@@ -58,6 +66,6 @@ else:
         print(f"{subject} : {val}")
     print(f"\nCGPA : {round(GPA,3)}")
     if countForFailure>0:
-        print("Sorry to hear that you've failed %d subjects. Please do attempt supplementary exams ASAP."%(countForFailure))
+        print("Sorry to know that you've failed %d subjects. Please do attempt supplementary exams ASAP."%(countForFailure))
 
 input()
